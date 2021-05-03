@@ -1,4 +1,5 @@
 import {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 
 function Pokemon({name, url, index}){
 
@@ -7,6 +8,11 @@ function Pokemon({name, url, index}){
     const [pokemon, setPokemon] = useState({});
 
     const imgUrl = `https://pokeres.bastionbot.org/images/pokemon/${index}.png`;
+
+    const handleClick = (pokeName) => {
+        console.log(`you clicked on ${pokeName.pokemon.name}`);
+
+    }
 
     useEffect(() => {
         fetch(url)
@@ -30,18 +36,21 @@ function Pokemon({name, url, index}){
         return <div>Loading...</div>
     }
     else{
-        console.log(imgUrl);
+        //console.log(imgUrl);
         return(
-            <div>
-                <h1>{name}</h1>
-                <ul>
-                    <li>Id: {pokemon.id}</li>
-                    <li>Base experience: {pokemon.base_experience}</li>
-                    <li>Height: {pokemon.height}</li>
-                    <li>Weight: {pokemon.weight}</li>
-                </ul>
-                <img src={imgUrl} alt={name} width="300" height="300"/>
-            </div>
+            <Link to = "/details">
+
+                <div className="card" onClick={() => handleClick({pokemon})}>
+                    <h1>{name}</h1>
+                    <ul>
+                        <li>Id: {pokemon.id}</li>
+                        <li>Base experience: {pokemon.base_experience}</li>
+                        <li>Height: {pokemon.height}</li>
+                        <li>Weight: {pokemon.weight}</li>
+                    </ul>
+                    <img src={imgUrl} alt={name} width="300" height="300"/>
+                </div>
+            </Link>
       )
     }
 }
