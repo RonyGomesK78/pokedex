@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Pokemon from './components/pokemon'
+import Pokemon from './components/pokemon';
 
 function App() {
 
@@ -34,14 +34,16 @@ function App() {
   else{
     return (
       <div className="App">
-        {pokemons.map((pokemon, index) => (
-          <Pokemon
-            key={pokemon.name}
-            name={pokemon.name}
-            url={pokemon.url}
-            index={++index}
-          />
-        ))}
+        <div className="card">
+          {pokemons.map((pokemon, index) => (
+            <Pokemon
+              key={pokemon.name}
+              name={pokemon.name}
+              url={pokemon.url}
+              index={++index}
+            />
+          ))}
+        </div>
       </div>
     );
   }

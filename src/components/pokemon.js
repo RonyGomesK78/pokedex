@@ -35,10 +35,10 @@ function Pokemon({name, url, index}){
             <div>
                 <h1>{name}</h1>
                 <ul>
-                    <li>{pokemon.id}</li>
-                    <li>{pokemon.base_experience}</li>
-                    <li>{pokemon.height}</li>
-                    <li>{pokemon.weight}</li>
+                    <li>Id: {pokemon.id}</li>
+                    <li>Base experience: {pokemon.base_experience}</li>
+                    <li>Height: {pokemon.height}</li>
+                    <li>Weight: {pokemon.weight}</li>
                 </ul>
                 <img src={imgUrl} alt={name} width="300" height="300"/>
             </div>
