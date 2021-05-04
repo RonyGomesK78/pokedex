@@ -48,7 +48,7 @@ function Pokemon({name, url, index}){
                         <li>Height: {pokemon.height}</li>
                         <li>Weight: {pokemon.weight}</li>
                     </ul>
-                    <img src={imgUrl} alt={name} width="300" height="300"/>
+                    <img src={imgUrl} alt={name} width="200" height="200"/>
                 </div>
             </Link>
       )

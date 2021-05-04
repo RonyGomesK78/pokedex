@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Pokemon from './pokemon';
+import './home.css';
 
 function Home() {
 
