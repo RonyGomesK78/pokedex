@@ -1,5 +1,16 @@
+.App{
+    width: 800px;
+    margin: 0 auto;
+}
+
 .cards{
     display: flex;
     flex-flow: row wrap;
     justify-content: start;
+}
+
+@media (max-width: 500px){
+    .cards{
+        flex-direction: column;
+    }
 }
