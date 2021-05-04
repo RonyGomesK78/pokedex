@@ -1,5 +1,5 @@
 .App{
-    width: 800px;
+    width: 900px;
     margin: 0 auto;
 }
 
@@ -13,4 +13,37 @@
     .cards{
         flex-direction: column;
     }
+}
+
+.cardLink{
+    text-decoration: none;
+}
+
+.cardLink:active{
+    color: #5521a8;
+}
+
+.card{
+    margin: 2px;
+    padding: 8px;
+    border: 1px solid ;
+    background-color: black;
+
+}
+
+.card > h1{
+    text-align: center;
+}
+
+.card > p{
+    text-align: center;
+}
+.card > ul {
+    
+    list-style-type: none;
+}
+
+.card > li{
+    
+    
 }

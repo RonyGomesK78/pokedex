@@ -27,7 +27,7 @@ function Pokemon({name, url, index}){
                     setError(error);
                 }            
             )
-    }, []);
+    }, [url]);
 
     if (error) {
         return <div>Error: {error.message}</div>;
@@ -36,19 +36,20 @@ function Pokemon({name, url, index}){
         return <div>Loading...</div>
     }
     else{
-        //console.log(imgUrl);
+        console.log(pokemon.types);
         return(
-            <Link to = "/details">
+            <Link className="cardLink" to = "/details">
 
                 <div className="card" onClick={() => handleClick({pokemon})}>
+                    <p>Base_xp: {pokemon.base_experience}</p>
+                    <img src={imgUrl} alt={name} width="200" height="200"/>
                     <h1>{name}</h1>
+                    <p>{pokemon.id}</p>
                     <ul>
-                        <li>Id: {pokemon.id}</li>
-                        <li>Base experience: {pokemon.base_experience}</li>
                         <li>Height: {pokemon.height}</li>
+                        <li>Type: </li>
                         <li>Weight: {pokemon.weight}</li>
                     </ul>
-                    <img src={imgUrl} alt={name} width="200" height="200"/>
                 </div>
             </Link>
       )

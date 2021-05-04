@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
   it('should display a loading text', () => {
@@ -14,5 +14,6 @@ import App from './App';
     name: 'picachu',
     url:  'https://pokeapi.co/api/v2/pokemon/25/',
   };
+  
 
   
