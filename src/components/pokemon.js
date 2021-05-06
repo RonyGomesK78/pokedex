@@ -5,14 +5,13 @@ import React from 'react';
 const Pokemon = ({name, url, index}) => {
 
     const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(true);
     const [pokemon, setPokemon] = useState({});
     //const pokemon = React.useRef(null);
     const imgUrl = `https://pokeres.bastionbot.org/images/pokemon/${index}.png`;
 
     const handleClick = (pokeName) => {
         console.log(`you clicked on ${pokeName.pokemon.name}`);
-
     }
 
     useEffect(() => {
@@ -20,12 +19,13 @@ const Pokemon = ({name, url, index}) => {
             .then(response => response.json())
             .then(
                 (result) => {
-                    setIsLoaded(true);
+                    //setIsLoaded(true);
                     setPokemon(result);
                     //pokemon.current = result;
+                    setIsLoaded(false);
                 },
                 (error) => {
-                    setIsLoaded(true);
+                    setIsLoaded(false);
                     setError(error);
                 }            
             )
@@ -34,11 +34,17 @@ const Pokemon = ({name, url, index}) => {
     if (error) {
         return <div>Error: {error.message}</div>;
     }
-    else if (!isLoaded) {
+    else if (isLoaded) {
         return <div>Loading...</div>
     }
     else{
-        console.log(pokemon.types);
+        const {types} = pokemon;
+        /*const slot = types.map((element, index) => {
+            if(index==0){
+                return element;
+            }
+        })*/
+
         return(
             <Link className="cardLink" to = "/details">
 
@@ -52,6 +58,7 @@ const Pokemon = ({name, url, index}) => {
                         <li>Type: </li>
                         <li>Weight: {pokemon.weight}</li>
                     </ul>
+                    <p></p>
                 </div>
             </Link>
       )
