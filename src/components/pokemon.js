@@ -1,12 +1,13 @@
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
+import React from 'react';
 
-function Pokemon({name, url, index}){
+const Pokemon = ({name, url, index}) => {
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [pokemon, setPokemon] = useState({});
-
+    //const pokemon = React.useRef(null);
     const imgUrl = `https://pokeres.bastionbot.org/images/pokemon/${index}.png`;
 
     const handleClick = (pokeName) => {
@@ -21,6 +22,7 @@ function Pokemon({name, url, index}){
                 (result) => {
                     setIsLoaded(true);
                     setPokemon(result);
+                    //pokemon.current = result;
                 },
                 (error) => {
                     setIsLoaded(true);

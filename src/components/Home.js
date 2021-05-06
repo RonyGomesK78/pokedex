@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Pokemon from './pokemon';
 import './home.css';
 
-function Home() {
+const Home = () => {
 
     const url = "https://pokeapi.co/api/v2/pokemon?limit=151";
 

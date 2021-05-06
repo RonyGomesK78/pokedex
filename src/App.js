@@ -2,7 +2,7 @@ import Home from './components/Home';
 import Details from './components/Details';
 import {Route, Switch} from 'react-router-dom';
 
-function App() {
+const App = () => {
 
   return(
     <Switch>
