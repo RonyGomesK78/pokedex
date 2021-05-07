@@ -38,13 +38,11 @@ const Pokemon = ({name, url, index}) => {
         return <div>Loading...</div>
     }
     else{
-        const {types} = pokemon;
-        /*const slot = types.map((element, index) => {
-            if(index==0){
-                return element;
-            }
-        })*/
-
+        const types = pokemon.types;
+       // console.log(types);
+        const [ first ] = types;
+        console.log(first.type.name); 
+        const type = first.type.name;
         return(
             <Link className="cardLink" to = "/details">
 
@@ -55,7 +53,7 @@ const Pokemon = ({name, url, index}) => {
                     <p>{pokemon.id}</p>
                     <ul>
                         <li>Height: {pokemon.height}</li>
-                        <li>Type: </li>
+                        <li>Type: {type}</li>
                         <li>Weight: {pokemon.weight}</li>
                     </ul>
                     <p></p>
