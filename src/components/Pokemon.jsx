@@ -5,7 +5,7 @@ import React from 'react';
 const Pokemon = ({name, url, index}) => {
 
     const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(true);
+    const [isLoaded, setIsLoaded] = useState(false);
     const [pokemon, setPokemon] = useState({});
     //const pokemon = React.useRef(null);
     const imgUrl = `https://pokeres.bastionbot.org/images/pokemon/${index}.png`;
@@ -22,10 +22,10 @@ const Pokemon = ({name, url, index}) => {
                     //setIsLoaded(true);
                     setPokemon(result);
                     //pokemon.current = result;
-                    setIsLoaded(false);
+                    setIsLoaded(true);
                 },
                 (error) => {
-                    setIsLoaded(false);
+                    setIsLoaded(true);
                     setError(error);
                 }            
             )
@@ -34,7 +34,7 @@ const Pokemon = ({name, url, index}) => {
     if (error) {
         return <div>Error: {error.message}</div>;
     }
-    else if (isLoaded) {
+    else if (!isLoaded) {
         return <div>Loading...</div>
     }
     else{
