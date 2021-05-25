@@ -1,8 +1,12 @@
+import Header from './Header';
 
 function Details(){
 
     return(
-        <h1>Details</h1>
+        <>
+            <Header/>
+            <h1>Details</h1>
+        </>
     )
 }
 

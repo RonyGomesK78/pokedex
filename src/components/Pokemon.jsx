@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {Link} from 'react-router-dom';
 import React from 'react';
+import { yourColor } from '../utilities';
 
 const Pokemon = ({name, url, index}) => {
 
@@ -39,24 +40,22 @@ const Pokemon = ({name, url, index}) => {
     }
     else{
         const types = pokemon.types;
-       // console.log(types);
         const [ first ] = types;
-        console.log(first.type.name); 
         const type = first.type.name;
+
         return(
             <Link className="cardLink" to = "/details">
 
-                <div className="card" onClick={() => handleClick({pokemon})}>
+                <div className="card" onClick={() => handleClick({pokemon})} style={{background: yourColor(type)}} >
                     <p>Base_xp: {pokemon.base_experience}</p>
                     <img src={imgUrl} alt={name} width="200" height="200"/>
-                    <h1>{name}</h1>
-                    <p>{pokemon.id}</p>
+                    <h2>{name}</h2>
+                    <p>#{pokemon.id}</p>
                     <ul>
                         <li>Height: {pokemon.height}</li>
                         <li>Type: {type}</li>
                         <li>Weight: {pokemon.weight}</li>
                     </ul>
-                    <p></p>
                 </div>
             </Link>
       )

@@ -28,18 +28,6 @@ body {
     margin: 0 auto;
 }
 
-.cards {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: start;
-}
-
-@media (max-width: 500px) {
-    .cards{
-        flex-direction: column;
-    }
-}
-
 .cardLink {
     text-decoration: none;
 }
@@ -48,16 +36,29 @@ body {
     color: #5521a8;
 }
 
+.cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+@media (max-width: 900px) {
+    .cards{
+        flex-direction: column;
+    }
+}
+
+
 .card {
+    width: 200px;
+    height: 500px;
     margin: 2px;
     padding: 8px;
     border: 1px solid ;
-    color: #3391ff;
-    background-color: black;
-
+    color: snow;
 }
 
-.card > h1 {
+.card > h2 {
     text-align: center;
 }
 
@@ -65,7 +66,11 @@ body {
     text-align: center;
 }
 .card > ul {
-    
+    text-align: start;
     list-style-type: none;
+}
+
+.card > img {
+    align-content: center;
 }
 
