@@ -52,11 +52,18 @@ body {
 .card {
     width: 200px;
     height: 500px;
-    margin: 2px;
+    margin: 3.5px;
     padding: 8px;
     border: 1px solid ;
     color: snow;
 }
+
+.card:hover {
+    
+    box-shadow: 0 10px 50px -5px rgb(8, 8, 7);
+    transform: scale(1.014);
+}
+
 
 .card > h2 {
     text-align: center;
