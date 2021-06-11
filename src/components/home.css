@@ -8,6 +8,10 @@ body {
     margin-bottom: 5rem;
 }
 
+.header > input {
+    outline: none;
+}
+
 #logo {
     padding-top: 10px;
     padding-left: 30px;
@@ -72,12 +76,14 @@ body {
 .card > p {
     text-align: center;
 }
-.card > ul {
-    text-align: start;
-    list-style-type: none;
-}
 
 .card > img {
     align-content: center;
+}
+
+#someSpecs {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
 }
 
