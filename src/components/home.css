@@ -55,11 +55,13 @@ body {
 
 .card {
     width: 200px;
-    height: 500px;
-    margin: 3.5px;
+    height: 300px;
+    margin: 0.8em;
     padding: 8px;
     border: 1px solid ;
-    color: snow;
+    border-radius: 10px;
+    color:darkslategray;
+    
 }
 
 .card:hover {
@@ -68,6 +70,19 @@ body {
     transform: scale(1.014);
 }
 
+.name_and_icon {
+    display: flex;
+    justify-content: space-between;
+}
+
+.name_and_icon > h1 {
+    font-size: 1.2em;
+    display: inline;
+}
+
+.icone {
+    align-self: flex-end;
+}
 
 .card > h2 {
     text-align: center;
@@ -75,15 +90,30 @@ body {
 
 .card > p {
     text-align: center;
+    margin-top: 0.1em;
+    margin-bottom: 0.8em;
 }
 
-.card > img {
-    align-content: center;
+.pokemon {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
 }
 
 #someSpecs {
+    align-items: center;
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
+}
+
+.spec {
+    border-radius: 10px;
+    border: 1px solid white;
+    background: greenyellow;
+    padding: 3px;
+    margin-bottom: 10px;
+    
 }
 

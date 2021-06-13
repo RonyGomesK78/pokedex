@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
 import Pokemon from "./Pokemon";
 import Header from "./Header";
 
@@ -53,7 +52,7 @@ const Home = () => {
             ) : (
                 
                 pokemons.filter( pokemon => (
-                  pokemon.name.includes(searched)
+                  pokemon.name.includes(searched.toLowerCase())
                 )).map(pokemon => (
                     
                 <Pokemon

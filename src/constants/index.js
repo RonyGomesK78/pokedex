@@ -5,7 +5,7 @@ export const PokemonTypes = [
     { color: "#7c538c", type: "poison" },
     { color: "#62626d", type: "bug" },
     { color: "#b3b4b8", type: "normal"},
-    { color: "#e4e972", type: "electric"},
+    { color: "#e4ec32", type: "electric"},
     { color: "#d3b284", type: "ground" },
     { color: "#e566a3", type: "fairy" },
     { color: "#890400", type: "fighting" },
@@ -15,4 +15,4 @@ export const PokemonTypes = [
     { color: "#d13117", type: "dragon" },
     { color: "#dbf4f7", type: "ice" }
 
-]
+];

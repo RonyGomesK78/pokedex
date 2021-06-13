@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import React from "react";
 
-import { yourColor } from "../utilities";
+import { yourColor, pickIcon } from "../utilities";
 
 const Pokemon = ({ name, url, index }) => {
 
@@ -45,14 +45,16 @@ const Pokemon = ({ name, url, index }) => {
           onClick={() => handleClick({ pokemon })}
           style={{ background: yourColor(type) }}
         >
-          <p>Base_xp: {pokemon.data.base_experience}</p>
-          <img src={imgUrl} alt={name} width="200" height="200" />
-          <h2>{name}</h2>
+        
+          <div className='name_and_icon'>
+            <h1>{name[0].toUpperCase()+name.slice(1)}</h1>
+            <img className="icone" src= {pickIcon(type)} alt='icone' width='20' height='20'/>  
+          </div>
+          <img className='pokemon' src={imgUrl} alt={name} width="100" height="100" />
           <p>#{pokemon.data.id}</p>
           <div id="someSpecs">
-            <div>Height: {pokemon.data.height}</div>
-            <div>Type: {type}</div>
-            <div>Weight: {pokemon.data.weight}</div>
+            <div className='spec'>Height: {pokemon.data.height}</div>
+            <div className='spec'>Weight: {pokemon.data.weight}</div>
           </div>
         </div>
       </Link>
